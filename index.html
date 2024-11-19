@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Editable CV Builder with Share and Download</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="cv-container">
+    <h1>Editable CV Builder</h1>
+    <form id="cvForm">
+      <div class="form-group">
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" placeholder="Enter your full name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" placeholder="Enter your email" required>
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Phone:</label>
+        <input type="tel" id="phone" placeholder="Enter your phone number" required>
+      </div>
+
+      <div class="form-group">
+        <label for="experience">Experience:</label>
+        <textarea id="experience" rows="4" placeholder="Describe your work experience" required></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="education">Education:</label>
+        <textarea id="education" rows="4" placeholder="Describe your education" required></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="skills">Skills:</label>
+        <div class="skills-input">
+          <input type="text" id="skillInput" placeholder="Enter a skill">
+          <button type="button" id="addSkillBtn">Add Skill</button>
+        </div>
+        <ul id="skillsList"></ul>
+      </div>
+
+      <button type="button" id="generateCV" class="generate-btn">Generate CV</button>
+    </form>
+
+    <div id="cvPreview">
+      <h2>CV Preview</h2>
+      <div id="output" contenteditable="true"></div>
+      <p class="edit-tip">*You can edit this preview directly by clicking on it.</p>
+    </div>
+
+    <div class="actions">
+      <button id="downloadCV" class="action-btn">Download as PDF</button>
+      <button id="shareCV" class="action-btn">Share CV</button>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
